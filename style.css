@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    /* Primary Colors */
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+  
+    /* Neutral Colors */
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+  
+    /* Typography */
+    --font-body: 'Ubuntu', sans-serif;
+    --font-size-paragraph: 16px;
+  
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+*{
+    font-family: var(--font-body);
+    font-size: var(--font-size-paragraph);
+}
+body {
+    padding: 0;
+    margin: 0;
+    color: var(--marine-blue);
+    background-color: var(--magnolia);
+}
+.mobile-header{
+    display: none;
+}
+p{
+    line-height: 1.7;
+}
+section{
+    width: 60%;
+    display: flex;
+    margin: 5% auto;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 8rem 1rem 1rem;
+    background-color: var(--white);
+    box-shadow: 4px 8px 8px hsl(231, 11%, 63%, 0.4);
+}
+.sidebar{
+    width: 40%;
+    height: 95vh;
+    padding: 1rem;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('assets/images/bg-sidebar-desktop.svg');
+}
+.step{
+    display: flex;
+    align-items: center; 
+    text-transform: uppercase;
+}
+.step button{
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 50%; 
+    margin-right: 1rem;
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+}
+.step button:hover{
+    color: var(--marine-blue);
+    background-color: var(--light-blue);
+}
+/* Styles pour le step actif */
+.step button.active {
+    color: var(--marine-blue);
+    background-color: var(--light-blue);
+}  
+.step p{
+    font-size: 0.8em;
+    color: var(--cool-gray);
+}
+main{
+    width: 80%;
+    margin-left: 5rem;
+}
+.cards{
+    gap: 30px;
+    display: flex;   
+}
+.card-1,.card-2,.card-3{
+    width: 80px;
+    height: 22.5vh;
+    cursor: pointer;   
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--light-blue);
+}
+/* Style pour les éléments sélectionnés */
+.cards div.selected {
+    cursor: pointer;
+    background-color: var(--light-blue);
+    border: 1px solid var(--purplish-blue);
+}
+.card-1:hover,.card-2:hover,.card-3:hover{
+    border: 1px solid var(--purplish-blue);
+}
+.card-1 h3,.card-2 h3,.card-3 h3{
+    font-size: 0.9em;
+}
+.card-1 h6,.card-2 h6,.card-3 h6{
+    font-size: 0.7em;
+} 
+.addons{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    justify-content: space-between;
+    border: 1px solid var(--light-gray);
+}
+.online-billing{
+    margin-left: auto;
+}
+.addons h4,.addons p{
+    font-size: 0.9em;
+}
+.addons:hover{
+    cursor: pointer;
+    border: 1px solid var(--purplish-blue); 
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+} 
+.checkbox {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 2rem;
+    cursor: pointer;
+} 
+.checkbox.checked {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('assets/images/icon-checkmark.svg'); /* Chemin vers votre image */
+    background-color: var(--purplish-blue); /* Couleur de fond */
+    border-color: var(--marine-blue); /* Couleur de la bordure */
+    /* Assurez-vous d'ajuster la taille, la largeur et d'autres propriétés selon vos besoins */
+    width: 20px;
+    height: 20px;
+}
+.checkbox.checked .checkmark {
+    display: block;
+}
+.addons.checked {
+    border: 1px solid var(--purplish-blue);
+    background-color: var(--light-blue);
+}  
+.monthly-billing,.yearly-billing{
+    color: var(--purplish-blue);
+    font-weight: 900;
+}
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 0.9em;
+    color: var(--white);
+}
+h1, h2, h3, h4, h5, h6,.step,label {
+    font-weight: var(--font-weight-bold);
+}
+p {
+    color: var(--cool-gray);
+    font-weight: var(--font-weight-regular);
+}
+.buttons{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+button{
+    background: none;
+    cursor: pointer;
+    border: none; 
+}
+.step button, .prev-step{
+    font-weight: var(--font-weight-bold);
+}
+.step-4 .buttons{
+    margin-top: 6rem;
+}
+.prev-step{
+    opacity: 0.5;
+    color: var(--marine-blue);
+}
+.step-1-next{
+    align-items: flex-start;
+    justify-content: right;
+}
+.next-step,.confirm {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--marine-blue);
+    color: var(--white);
+}
+.confirm{
+    background-color: var(--purplish-blue);
+}
+main button:hover {
+    background-color: var(--pastel-blue);
+}
+.infos{
+    margin-bottom: 2.5rem;
+}
+.email,.name,.phone-number{
+    margin: 1rem 0;
+}
+input {
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    border: 1px solid var(--light-gray);
+}
+input:focus {
+    border-color: var(--purplish-blue);
+}
+.toggle-div{
+    gap: 30px;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;   
+    background-color: hsl(206, 94%, 87%, 0.3);
+}
+.toggle-icon {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: var(--marine-blue);
+    transition: background-color 0.3s ease;
+}
+.toggle-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: translateX(-10px);
+    transition: transform 0.3s ease;
+    background-color: hsl(0, 0%, 100%);
+}
+.toggle-icon.active .toggle-circle {
+    transform: translateX(10px);
+}
+/* Styles pour les étapes */
+.step-content {
+    display: none;
+  }
+.step-content.active {
+    display: block;
+}
+/* Autres styles */
+.flex-stats,.addons-list p,.total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total{
+    width: 93%;
+}
+.duration{
+    margin-left: 0.3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--marine-blue);
+}
+.total-billing{
+    font-size: 1.1em;
+    font-weight: var(--font-weight-bold);
+    color: var(--purplish-blue);
+}
+.finishing-summary .first-choice,
+  .finishing-summary .second-choice,
+  .finishing-summary .third-choice,
+  .finishing-summary .total {
+    margin-bottom: 15px;
+} 
+/* Styles pour les résumés */
+.finishing-summary {
+    background-color: var(--magnolia);
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    width: 80%;
+}
+.addon-price{
+    font-weight: 500;
+    color: var(--marine-blue);
+}
+.addons-choice,
+.total-billing {
+    font-weight: var(--font-weight-bold);
+}
+.addon-item{
+    line-height: 2.5;
+    color: var(--cool-gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.selected-plan{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.selected-plan-price{
+    font-weight: 900;
+    font-size: 1.1em;
+    color: var(--marine-blue);
+}
+.change-plan{
+    color: var(--cool-gray);
+}
+.change-plan:hover{
+    color: var(--purplish-blue);
+}
+.label-div{
+    display: flex;
+    align-items: center;
+}
+input.error {
+    border: 1px solid hsl(0, 92%, 51%, 0.5);
+}
+.error-message {
+    font-weight: var(--font-weight-medium);
+    color: hsl(0, 92%, 51%, 0.8);
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: none;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.thanks{
+    text-align: center;
+}
+.thanks h6{
+    font-size: 1.5em;
+}
+hr{
+    border: 1px solid var(--light-gray);
+    opacity: 0.5;
+}
+.hidden {
+    display: none;
+}  
+@media screen and (max-width: 850px) {
+    body{
+        overflow-x: hidden;
+    }
+    section{
+        width: 80%;
+        top: 5rem;
+        z-index: 2;
+        display: flex; 
+        position: relative;
+        align-items: center;
+        padding: 1rem 4rem 1rem 1rem;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .sidebar{
+        display: none;
+    }
+    .mobile-header {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('assets/images/bg-sidebar-mobile.svg');
+        height: 30vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    main{
+        margin-left: 0;
+    }
+    .step-button{
+        margin-top: 3rem;
+    }
+    .step div{
+        display: none;
+    }
+    .cards{
+        flex-direction: column;
+    }
+    .card-1,.card-2,.card-3{
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        padding: 0.5rem 1rem;
+        align-items: center;
+    }
+    .card-1 div,.card-2 div,.card-3 div{
+        margin-left: 1.5rem;
+    }
+    .addons{
+        width: 90%;
+    }
+}
